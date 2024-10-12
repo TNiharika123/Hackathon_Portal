@@ -159,6 +159,7 @@ h1 {
 }
 
 .prizesection {
+  
   text-align: center;
   margin: 0 auto;
   padding: 0 4vh 0 4vh;
@@ -167,6 +168,31 @@ h1 {
   margin-top: 4vh;
   background-color: #f3effe;
 }
+.prizeContainer {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of items */
+  justify-content: space-around; /* Add space between each prize */
+  align-items: stretch; /* Make all items stretch to the same height */
+  gap: 20px; /* Optional: Add some space between columns */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 10px 0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .prizeContainer {
+    flex-wrap: wrap; /* Wrap items vertically for smaller screens */
+  }
+
+  .prize-item {
+    max-width: none; /* Remove max width for smaller screens */
+    flex-basis: 100%; /* Make items full width */
+  }
+}
+
 
 .sponsorSection {
   padding: 17vh 18vh 0 18vh;

@@ -1,43 +1,48 @@
+/* Main container for the themes section */
 .theme-section {
-    padding: 3rem 1rem; /* Adding some padding to the overall section */
-    background-color: #f9f9f9; /* Optional background color for the section */
-    text-align: center;
-  }
-  
-  .theme-container {
-    margin-top: 2rem; /* Margin to space out the themes from the heading */
-  }
-  
-  .themes h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-  }
-  
-  .theme-box {
-    background-color: white;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for card effect */
-  }
-  
-  .theme-box h2 {
-    font-size: 1.8rem;
-    color: #333;
-  }
-  
-  .theme-box p {
-    color: #666;
-  }
-  
-  @media (max-width: 768px) {
-    .theme-box {
-      padding: 1rem; /* Reducing padding on smaller screens */
-    }
-  
-    .theme-box h2 {
-      font-size: 1.5rem; /* Adjust font size for smaller screens */
-    }
-  }
-  
+  background-color: #f9f9f9;
+  margin-top:-20px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container for the theme boxes */
+.themeContainer {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of items */
+  justify-content: flex-start; /* Align items horizontally from the left */
+  gap: 20px; /* Adds space between theme boxes */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Additional styles for theme icon */
+.theme-icon {
+  width: 50px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between icon and title */
+}
+
+
+
+/* Add hover effect to theme boxes */
+.theme-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Title inside the theme box */
+.theme-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Content inside the theme box */
+.theme-box p {
+  font-size: 1rem;
+  color: #666;
+}

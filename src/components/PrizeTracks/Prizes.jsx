@@ -19,4 +19,6 @@ export function FirstPrize(props) {
   );
 }
 
+
+
 // No default export needed when using named exports

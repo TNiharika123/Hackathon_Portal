@@ -4,9 +4,10 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import "./about.css";
+import { ThemeContainerBoxes } from "../Themes/Themes";
 import { Logo, LogoSectionAbout } from "../logo-section/logoSection.jsx";
 import { FirstPrize, PrizeHeading } from "../PrizeTracks/Prizes.jsx";
-import { Prizeinfo } from "../../Module/General.jsx";
+import { Prizeinfo, themesData } from "../../Module/General.jsx";
 import { Accordion } from "../FAQ/faq.jsx";
 import { Sponsor, SponsorsHead, SponsorUS } from "../Sponsors/sponsors.jsx";
 import DisplaySession from "../Session/session.jsx";
@@ -15,7 +16,7 @@ import Footer from "../Footer/footer.jsx";
 import { Member, JoinTeam } from "../team/team.jsx";
 import pattern from "./pattern4.png";
 import Media from "../media/media.jsx";
-// import Themes from "../Themes/Themes";
+import Themes from "../Themes/Themes";
 import {
   TOP_SECTION,
   TeamInfo,
@@ -32,11 +33,12 @@ import {
 function SponsorGroup({ sponsors }) {
   return (
     <Row>
-      {Array.isArray(sponsors) && sponsors.map((s, index) => (
-        <Col className="" sm={12} lg={4} md={6} key={index}>
-          <Sponsor srcx={s.src} />
-        </Col>
-      ))}
+      {Array.isArray(sponsors) &&
+        sponsors.map((s, index) => (
+          <Col className="" sm={12} lg={4} md={6} key={index}>
+            <Sponsor srcx={s.src} />
+          </Col>
+        ))}
     </Row>
   );
 }
@@ -44,33 +46,35 @@ function SponsorGroup({ sponsors }) {
 // Prize Group Component
 function PrizeGroup({ prizes }) {
   return (
-    <Row>
-      {Array.isArray(prizes) && prizes.map((s, index) => (
-        <Col className="" sm={12} lg={4} md={6} key={index}>
-          <FirstPrize icon={s.icon} type={s.type} content={s.content} />
-        </Col>
-      ))}
+    <Row className="prizeContainer">
+      {Array.isArray(prizes) &&
+        prizes.map((s, index) => (
+          <Col className="prize-item" xs={12} sm={6} lg={3} key={index}>
+            <div className="prize-content">
+              <FirstPrize icon={s.icon} type={s.type} content={s.content} />
+            </div>
+          </Col>
+        ))}
     </Row>
   );
 }
-
-
 
 // Team Members Component
 function TeamMembers({ members }) {
   return (
     <Row className="members">
-      {Array.isArray(members) && members.map((s, index) => (
-        <Col className="" sm={12} lg={4} md={4} key={index}>
-          <Member
-            name={s.Name}
-            role={s.role}
-            img={s.img}
-            github  ={s.github}
-            linkedin={s.linkedin}
-          />
-        </Col>
-      ))}
+      {Array.isArray(members) &&
+        members.map((s, index) => (
+          <Col className="" sm={12} lg={4} md={4} key={index}>
+            <Member
+              name={s.Name}
+              role={s.role}
+              img={s.img}
+              github={s.github}
+              linkedin={s.linkedin}
+            />
+          </Col>
+        ))}
     </Row>
   );
 }
@@ -79,11 +83,12 @@ function TeamMembers({ members }) {
 function FrequentlyAsked({ faqs }) {
   return (
     <Row className="sf">
-      {Array.isArray(faqs) && faqs.map((s, index) => (
-        <Col className="" sm={12} lg={6} md={6} key={index}>
-          <Accordion panels={s} />
-        </Col>
-      ))}
+      {Array.isArray(faqs) &&
+        faqs.map((s, index) => (
+          <Col className="" sm={12} lg={6} md={6} key={index}>
+            <Accordion panels={s} />
+          </Col>
+        ))}
     </Row>
   );
 }
@@ -93,11 +98,12 @@ function SessionWorkshops({ sessions }) {
   return (
     <Container fluid>
       <Row className="members">
-        {Array.isArray(sessions) && sessions.map((s, index) => (
-          <Col className="" sm={12} lg={4} md={4} key={index}>
-            <DisplaySession params={s} />
-          </Col>
-        ))}
+        {Array.isArray(sessions) &&
+          sessions.map((s, index) => (
+            <Col className="" sm={12} lg={4} md={4} key={index}>
+              <DisplaySession params={s} />
+            </Col>
+          ))}
       </Row>
     </Container>
   );
@@ -149,88 +155,49 @@ export default function HomePage(props) {
 
         {/* Important Dates */}
         <Container fluid className="timeline-section">
-        <Col className="impDates">
-      <h1>Important Dates</h1>
-      <br/>
-    </Col>
-  
-  <Row className="timeline-row">
-    
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>October 25,2024</h3>
-        <p>Registration Opening</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>November 25,2024</h3>
-        <p>Registration Closing</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>December 15,2024</h3>
-        <p>Shortlisted Teams Announcement</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>January 11,2025</h3>
-        <p>Offline Hackathon</p>
-      </div>
-    </Col>
-  </Row>
-  <div className="timeline-line">
-    <div className="timeline-progress"></div>
-  </div>
-</Container>
+          <Col className="impDates">
+            <h1>Important Dates</h1>
+            <br />
+          </Col>
 
-
+          <Row className="timeline-row">
+            <Col sm={3} className="timeline-date">
+              <div className="date-box">
+                <h3>October 25,2024</h3>
+                <p>Registration Opening</p>
+              </div>
+            </Col>
+            <Col sm={3} className="timeline-date">
+              <div className="date-box">
+                <h3>November 25,2024</h3>
+                <p>Registration Closing</p>
+              </div>
+            </Col>
+            <Col sm={3} className="timeline-date">
+              <div className="date-box">
+                <h3>December 15,2024</h3>
+                <p>Shortlisted Teams Announcement</p>
+              </div>
+            </Col>
+            <Col sm={3} className="timeline-date">
+              <div className="date-box">
+                <h3>January 11,2025</h3>
+                <p>Offline Hackathon</p>
+              </div>
+            </Col>
+          </Row>
+          <div className="timeline-line">
+            <div className="timeline-progress"></div>
+          </div>
+        </Container>
 
         {/* Themes */}
         <Container fluid className="theme-section">
-        <Col className="themes">
-      <h1>Hackathon Themes</h1>
-      <br/>
-    </Col>
-
-        {/* Hackathon Themes */}
-    {/* <Themes themes={themesData} /> Pass themes data as a prop */}
-
-  
-  <Row className="timeline-row">
-    
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>October 25,2024</h3>
-        <p>Registration Opening</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>November 25,2024</h3>
-        <p>Registration Closing</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>December 15,2024</h3>
-        <p>Shortlisted Teams Announcement</p>
-      </div>
-    </Col>
-    <Col sm={3} className="timeline-date">
-      <div className="date-box">
-        <h3>January 11,2025</h3>
-        <p>Offline Hackathon</p>
-      </div>
-    </Col>
-  </Row>
-  <div className="timeline-line">
-    <div className="timeline-progress"></div>
-  </div>
-</Container>
-
+          <Col className="themes">
+            <Themes themes={themesData} />{" "}
+            {/* Pass the themesData to Themes component */}
+          </Col>
+        </Container>
 
         {/* Frequently Asked Questions */}
         <div className="Myfaqs">
@@ -282,9 +249,10 @@ export default function HomePage(props) {
         {/* Team Section */}
         <h1>Our Team</h1>
         {FOOTER.JOIN_TEAM.required && <JoinTeam />}
-        {Array.isArray(TeamInfo) && TeamInfo.map((member, index) => (
-          <TeamMembers key={index} members={member} />
-        ))}
+        {Array.isArray(TeamInfo) &&
+          TeamInfo.map((member, index) => (
+            <TeamMembers key={index} members={member} />
+          ))}
       </Container>
       <Footer />
     </div>

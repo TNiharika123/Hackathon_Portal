@@ -79,22 +79,22 @@ const BANNER={
 // Updated themesData
 const themesData = [
   {
-    icon: replit,
+    // icon: replit,
     type: "Technology",
     content: "Build innovative technology solutions that create lasting impact."
   },
   {
-    icon: polygon,
+    // icon: polygon,
     type: "Blockchain",
     content: "Explore the world of decentralized finance and build blockchain-based applications."
   },
   {
-    icon: filecoin,
+    // icon: filecoin,
     type: "Data Storage",
     content: "Work on cutting-edge data storage solutions with Filecoin and IPFS."
   },
   {
-    icon: tezos,
+    // icon: tezos,
     type: "FinTech",
     content: "Solve financial challenges with innovative blockchain technology in the FinTech domain."
   }
@@ -507,6 +507,7 @@ const frequentlyAskedQuestions  = [
 export {
   BANNER,
   TOP_SECTION,
+  themesData,
   MIDDLE_SECTION,
   panels,
   SOCIALS,
