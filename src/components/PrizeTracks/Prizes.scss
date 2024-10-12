@@ -1,0 +1,64 @@
+.Prizes {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the content */
+    max-width: 32rem; /* Set a maximum width */
+    margin: 0 auto; /* Center the entire Prizes div */
+    text-align: center; /* Center the text inside */
+    margin-top: 1.7rem;
+    padding: 1.5rem; /* Add some padding */
+    border: 1px solid #e0e0e0; /* Optional border */
+    border-radius: 10px; /* Slight rounding */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for elevation */
+  }
+  
+  .Prizes h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    margin: 0.5rem 0;
+  }
+  
+  .Prizes p {
+    color: rgb(145, 143, 143);
+    margin-bottom: 1rem;
+  }
+  
+  .PrizeHeading h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    text-align: center; /* Center the heading */
+  }
+  
+  /* Colors for each prize tier */
+  .Prizes .first {
+    color: #a239ea;
+  }
+  
+  .Prizes .second {
+    color: #39a2db;
+  }
+  
+  .Prizes .third {
+    color: #ff616d;
+  }
+  
+  .Prizes .fourth {
+    color: #3c8dad;
+  }
+  
+  .Prizes .fifth {
+    color: #bf1363;
+  }
+  
+  .Prizes .sixth {
+    color: #ff96ad;
+  }
+  
+  .Prizes .seventh {
+    color: #e4bad4;
+  }
+  

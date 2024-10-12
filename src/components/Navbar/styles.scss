@@ -1,0 +1,118 @@
+/* Base styles for the navbar */
+nav {
+  list-style-type: none;
+  height: 12vh;
+  font-size: 1.8rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(50, 13, 136, 0.25);
+  background-color: rgba(18, 25, 48, 0.9);
+}
+
+/* Hamburger menu icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+}
+
+.hamburger .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* Navbar links */
+ul {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  margin-left: 5%;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1.5rem; /* Space between links */
+}
+
+.links {
+  color: rgb(231, 228, 228);
+  transition: color 0.5s;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding: 5px 10px; /* Added padding for spacing */
+}
+
+.links:hover {
+  color: rgb(133, 138, 236);
+}
+
+a:link {
+  text-decoration: none;
+  padding: 1px;
+}
+
+/* Styles for mobile screens */
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 15px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 8vh; /* Adjust based on your design */
+    left: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(18, 25, 48, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+  }
+
+  .links {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  nav {
+    height: 8.5vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .links {
+    letter-spacing: 0px;
+  }
+}
+
+@media (max-width: 370px) {
+  nav {
+    font-size: 1.6rem;
+  }
+  nav ul li {
+    margin: 0;
+    padding: 4px 11px;
+  }
+}
