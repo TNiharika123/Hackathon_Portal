@@ -49,32 +49,24 @@ export default class NAVBAR extends React.Component {
               <Link to="/" className="links">Home</Link>
             </li>
             <li>
-              <Link to="/discord" className="links">Discord</Link>
+              <Link to="/discord" className="links">AboutUs</Link>
             </li>
             <li>
-              <Link to="/linkedin" className="links">LinkedIn</Link>
+              <Link to="/linkedin" className="links">TimeLine</Link>
             </li>
             <li>
-              <Link to="/twitter" className="links">Twitter</Link>
+              <Link to="/twitter" className="links">Tracks</Link>
             </li>
             <li>
-              <Link to="/instagram" className="links">Instagram</Link>
+              <Link to="/instagram" className="links">Prizes</Link>
             </li>
             <li>
-              <Link to="/devpost" className="links">Devpost</Link>
+              <Link to="/devpost" className="links">Submission</Link>
             </li>
           </ul>
         </nav>
 
-        {/* Routes for different pages */}
-        <Routes>
-          <Route path="/discord" element={<Discord />} />
-          <Route path="/linkedin" element={<Linkedin />} />
-          <Route path="/devpost" element={<Devpost />} />
-          <Route path="/twitter" element={<Twitter />} />
-          <Route path="/instagram" element={<Instagram />} />
-          <Route path="/" element={<HomePage />} />
-        </Routes>
+       
       </div>
     );
   }

@@ -84,6 +84,11 @@ const themesData = [
     content: "Build innovative technology solutions that create lasting impact."
   },
   {
+    // icon: replit,
+    type: "Technology",
+    content: "Build innovative technology solutions that create lasting impact."
+  },
+  {
     // icon: polygon,
     type: "Blockchain",
     content: "Explore the world of decentralized finance and build blockchain-based applications."
@@ -92,6 +97,21 @@ const themesData = [
     // icon: filecoin,
     type: "Data Storage",
     content: "Work on cutting-edge data storage solutions with Filecoin and IPFS."
+  },
+  {
+    // icon: tezos,
+    type: "FinTech",
+    content: "Solve financial challenges with innovative blockchain technology in the FinTech domain."
+  },
+  {
+    // icon: tezos,
+    type: "FinTech",
+    content: "Solve financial challenges with innovative blockchain technology in the FinTech domain."
+  },
+  {
+    // icon: tezos,
+    type: "FinTech",
+    content: "Solve financial challenges with innovative blockchain technology in the FinTech domain."
   },
   {
     // icon: tezos,

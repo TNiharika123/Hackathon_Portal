@@ -1,48 +1,49 @@
-/* Main container for the themes section */
+
 .theme-section {
-  background-color: #f9f9f9;
-  margin-top:-20px;
-  padding: 15px 0;
+  background-color: #f9f9f9; /* Light background for the section */
+  padding: 20px 0; /* Padding around the section */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center all items */
+}
+
+/* Title for the themes section */
+.themes h1 {
+  font-size: 2.5rem; /* Font size for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #333; /* Dark color for the title */
 }
 
 /* Container for the theme boxes */
 .themeContainer {
-  display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping of items */
-  justify-content: flex-start; /* Align items horizontally from the left */
-  gap: 20px; /* Adds space between theme boxes */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding: 20px;
-  width: 100%;
-  box-sizing: border-box;
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: space-between; /* Space out theme boxes */
+  padding: 10px; /* Padding around the theme container */
 }
-/* Additional styles for theme icon */
+
+
+.theme-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+
+}
+
+/* Theme icon styles */
 .theme-icon {
-  width: 50px; /* Adjust width as needed */
+  width: 50px; /* Fixed width for the icon */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 10px; /* Space between icon and title */
 }
 
-
-
-/* Add hover effect to theme boxes */
-.theme-box:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-}
-
 /* Title inside the theme box */
 .theme-box h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.5rem; /* Font size for the theme title */
+  margin-bottom: 10px; /* Space below the title */
+  color: #333; /* Dark color for the title */
 }
 
 /* Content inside the theme box */
 .theme-box p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1rem; /* Font size for the description */
+  color: #666; /* Gray color for the description */
 }

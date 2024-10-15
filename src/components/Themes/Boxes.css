@@ -1,67 +1,70 @@
+
+
+/* Each box styling */
 .Boxes {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center the content */
-    width: 200px;
-    height:200px;
-    margin: 0 auto; /* Center the entire Boxes div */
-    text-align: center; /* Center the text inside */
-    margin-top: 1.7rem;
-    padding: 1.5rem; /* Add some padding */
-    border: 1px solid #e0e0e0; /* Optional border */
-    border-radius: 10px; /* Slight rounding */
-    background-color: #6573a3; /* Light background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for elevation */
-  }
-  
-  .Boxes h2 {
-    color: rgb(245, 241, 241);
-    font-size: 1.8rem;
-    font-weight: 600;
-    font-family: 'Nunito', sans-serif;
-    margin: 0.5rem 0;
-  }
-  
-  .Boxes p {
-    color: rgb(245, 241, 241);
-    font-size: 15px;
-    margin-bottom: 1rem;
-  }
-  
-  .PrizeHeading h1 {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    text-align: center; /* Center the heading */
-  }
-  
-  /* Colors for each prize tier */
-  .Boxes .first {
-    color: #a239ea;
-  }
-  
-  .Boxes .second {
-    color: #39a2db;
-  }
-  
-  .Boxes .third {
-    color: #ff616d;
-  }
-  
-  .Boxes .fourth {
-    color: #3c8dad;
-  }
-  
-  .Boxes .fifth {
-    color: #bf1363;
-  }
-  
-  .Boxes .sixth {
-    color: #ff96ad;
-  }
-  
-  .Boxes .seventh {
-    color: #e4bad4;
-  }
-  
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center the content */
+  width: 200px; /* Fixed width for the boxes */
+  height: 200px; /* Fixed height for the boxes */
+  text-align: center; /* Center the text inside */
+  margin: 1.7rem; /* Space between boxes */
+  padding: 1rem; /* Add some padding */
+  border: 1px solid #e0e0e0; /* Optional border */
+  border-radius: 10px; /* Slight rounding */
+  background-color: #6573a3; /* Light background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for elevation */
+}
+
+.Boxes h2 {
+  color: rgb(245, 241, 241);
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  margin: 0.5rem 0;
+}
+
+.Boxes p {
+  color: rgb(245, 241, 241);
+  font-size: 15px;
+  margin-bottom: 1rem;
+}
+
+/* PrizeHeading styles (no changes needed here) */
+.PrizeHeading h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  text-align: center; /* Center the heading */
+}
+
+/* Colors for each prize tier */
+.Boxes .first {
+  color: #a239ea;
+}
+
+.Boxes .second {
+  color: #39a2db;
+}
+
+.Boxes .third {
+  color: #ff616d;
+}
+
+.Boxes .fourth {
+  color: #3c8dad;
+}
+
+.Boxes .fifth {
+  color: #bf1363;
+}
+
+.Boxes .sixth {
+  color: #ff96ad;
+}
+
+.Boxes .seventh {
+  color: #e4bad4;
+}

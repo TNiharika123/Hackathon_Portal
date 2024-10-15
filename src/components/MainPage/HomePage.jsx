@@ -60,7 +60,8 @@ function PrizeGroup({ prizes }) {
 }
 
 // Team Members Component
-function TeamMembers({ members }) {
+function TeamMembers({ members }) 
+{
   return (
     <Row className="members">
       {Array.isArray(members) &&
@@ -74,7 +75,8 @@ function TeamMembers({ members }) {
               linkedin={s.linkedin}
             />
           </Col>
-        ))}
+        ))
+        }
     </Row>
   );
 }
@@ -112,6 +114,7 @@ function SessionWorkshops({ sessions }) {
 // Main HomePage Component
 export default function HomePage(props) {
   useEffect(() => {
+    console.log("HomePage Rendered");
     const script = document.createElement("script");
     script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
@@ -152,7 +155,8 @@ export default function HomePage(props) {
             <Logo />
           </Col>
         </Row>
-
+        </Container>
+        
         {/* Important Dates */}
         <Container fluid className="timeline-section">
           <Col className="impDates">
@@ -220,23 +224,6 @@ export default function HomePage(props) {
           <h2>Coming Soon</h2>
         </Row>
 
-        {/* Sponsors Section */}
-        <Row className="sponsorSection">
-          <SponsorsHead />
-          <SponsorUS />
-          {sponsorLogos.map((sponsor, index) => (
-            <SponsorGroup key={index} sponsors={sponsor} />
-          ))}
-        </Row>
-
-        {/* Speakers Section */}
-        <br />
-        <Row className="speakersection">
-          <h1>Our Speakers Here</h1>
-          <h2>Coming Soon</h2>
-        </Row>
-        <br />
-
         {/* Birds Component */}
         <Birds top="120vh" left="0vh" type="" />
 
@@ -246,14 +233,8 @@ export default function HomePage(props) {
           <h2>Coming Soon</h2>
         </Row>
 
-        {/* Team Section */}
-        <h1>Our Team</h1>
-        {FOOTER.JOIN_TEAM.required && <JoinTeam />}
-        {Array.isArray(TeamInfo) &&
-          TeamInfo.map((member, index) => (
-            <TeamMembers key={index} members={member} />
-          ))}
-      </Container>
+       
+      
       <Footer />
     </div>
   );
