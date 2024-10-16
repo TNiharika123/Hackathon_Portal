@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+// import axios from 'axios';
 const Form = () => {
   const [hasParticipated, setHasParticipated] = useState('');
   const [formData, setFormData] = useState({
@@ -7,27 +7,34 @@ const Form = () => {
     lastName: '',
     email: '',
     phone: '',
-    teamMembers: '',
+    address: '',
+    company : '',
+    role : '',
+    skills : '',
+    teamName : '' ,
+    membersNumber: '',
     hasParticipated: '',
     projectIdeas: '',
     additionalComments: ''
   });
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    
   };
   
   const handleRadioChange = (e) => {
     setFormData({ ...formData, hasParticipated: e.target.value });
   };
-
+  console.log(formData);
   const handleSubmit = (e) => {
     e.preventDefault();
     // Store the data in localStorage
     localStorage.setItem('hackathonRegistration', JSON.stringify(formData));
     console.log('Form Data:', formData);
-    alert('Form submitted successfully!');
+    alert('Form submitted successfully!'); 
+//     
   };
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto mt-10">
@@ -44,6 +51,8 @@ const Form = () => {
             </label>
             <input
               type="text"
+              name='firstName'
+              onChange={ (e) => handleChange(e) }
               id="fName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
               placeholder="First Name"
@@ -57,6 +66,8 @@ const Form = () => {
             <input
               type="text"
               id="lName"
+              name='lastName'
+              onChange={ (e) => handleChange(e) }
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
               placeholder="Last Name"
               required
@@ -72,6 +83,8 @@ const Form = () => {
           <input
             type="email"
             id="email"
+            name='email'
+            onChange={ (e) => handleChange(e) }
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             placeholder="example@example.com"
             required
@@ -86,6 +99,8 @@ const Form = () => {
           <input
             type="tel"
             id="phone"
+            name='phone'
+            onChange={ (e) => handleChange(e) }
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             placeholder="(000) 000-0000"
             required
@@ -97,6 +112,8 @@ const Form = () => {
           </label>
           <input
             type="text"
+            name='address'
+            onChange={ (e) => handleChange(e) }
             id="address"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             required
@@ -109,6 +126,8 @@ const Form = () => {
           </label>
           <input
             type="text"
+            name="company"
+            onChange={ (e) => handleChange(e) }
             id="institution"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             required
@@ -121,6 +140,8 @@ const Form = () => {
           </label>
           <input
             type="text"
+            name="role"
+            onChange={ (e) => handleChange(e) }
             id="role"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             required
@@ -133,6 +154,8 @@ const Form = () => {
           </label>
           <input
             type="text"
+            name="skills"
+            onChange={ (e) => handleChange(e) }
             id="skills"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             required
@@ -145,6 +168,8 @@ const Form = () => {
           </label>
           <input
             type="text"
+            name="teamName"
+            onChange={ (e) => handleChange(e) }
             id="teamName"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             required
@@ -158,6 +183,8 @@ const Form = () => {
           </label>
           <input
             type="number"
+            name="memberNumber"
+            onChange={ (e) => handleChange(e) }
             id="teamMembers"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             placeholder="e.g., 3"
@@ -174,6 +201,8 @@ const Form = () => {
               <input
                 type="radio"
                 name="hasParticipated"
+               
+                // onChange={ (e) => handleChange(e) }
                 value="yes"
                 className="text-blue-600"
                 checked={hasParticipated === 'yes'}
@@ -185,6 +214,8 @@ const Form = () => {
               <input
                 type="radio"
                 name="hasParticipated"
+             
+                // onChange={ (e) => handleChange(e) }
                 value="no"
                 className="text-blue-600"
                 checked={hasParticipated === 'no'}
@@ -203,6 +234,8 @@ const Form = () => {
           <textarea
             id="projectIdeas"
             rows="4"
+            name=" projectIdeas"
+            onChange={ (e) => handleChange(e) }
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             placeholder="Describe your ideas..."
           ></textarea>
@@ -215,6 +248,8 @@ const Form = () => {
           </label>
           <textarea
             id="comments"
+            name="additionalComments"
+            onChange={ (e) => handleChange(e) }
             rows="4"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
             placeholder="Any additional information..."
@@ -257,7 +292,7 @@ const Form = () => {
         </div>
 
         {/* Submit Button */}
-        <button
+        <button onSubmit={handleSubmit}
           type="submit"
           className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm py-2.5"
         >
